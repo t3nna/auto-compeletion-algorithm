@@ -13,7 +13,7 @@
 }
 
 insertSorted([1, 3, 7, 12, 44], 8)*/
-const exampleArr = ['car','carpet', 'java', 'javascript', 'internet']
+const exampleArr = ['car', 'carpet', 'java', 'javascript', 'internet']
 
 function insertSortedString(arr, key) {
     let i
@@ -29,17 +29,33 @@ function insertSortedString(arr, key) {
     console.log(arr)
 }
 
+function insertSortedBinary(arr, key) {
+    let low = 0,
+        high = arr.length;
+
+    while (low < high) {
+        let mid = (low + high) >>> 1;
+        if (arr[mid] < key) low = mid + 1;
+        else high = mid;
+    }
+    arr.splice(low, 0, key)
+}
+
+insertSortedBinary(exampleArr, 'javasuck')
+
+
 
 function findCandidates(arr, key) {
     let res = []
     for (let i = 0; i < arr.length; i++) {
         let temp = arr[i].substring(0, key.length)
-        if(temp.includes(key)){
+        if (temp.includes(key)) {
             res.push(arr[i])
         }
     }
     return res
 }
-console.log(findCandidates(exampleArr, 'ca'));
+
+console.log(findCandidates(exampleArr, 'va'));
 
 console.log(findCandidates(['abc', 'dmo', 'dzo', 'edb', 'ffl', 'zzo'], 'd'));

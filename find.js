@@ -1,4 +1,4 @@
-function findCandidates(arr, key) {
+function findCandidatesBinary(arr, key) {
     let res = []
     let low = 0,
         high = arr.length;
@@ -20,4 +20,15 @@ function findCandidates(arr, key) {
     return res
 }
 
-console.log(findCandidates(['abc', 'dmo', 'dzo', 'edb', 'fal', 'fba', 'fbc', 'fbd', 'fc', 'fm', 'zzo'], 'f'));
+console.log(findCandidates(['abc', 'dmo', 'dzo', 'edb', 'fal', 'fba', 'fbc', 'fbd', 'fc', 'fm', 'zzo'], 'al'));
+
+function findCandidates(arr, key) {
+    let res = []
+    for (let i = 0; i < arr.length; i++) {
+        let temp = arr[i].substring(0, key.length)
+        if (temp.includes(key)) {
+            res.push(arr[i])
+        }
+    }
+    return res
+}

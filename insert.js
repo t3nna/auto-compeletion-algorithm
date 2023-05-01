@@ -14,4 +14,5 @@ function sortedIndex(array, value) {
 }
 
 arr.splice(sortedIndex(arr,num), 0, num )
+console.log(sortedIndex(arr, num));
 console.log(arr);
